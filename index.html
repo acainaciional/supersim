@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Funil Typebot</title>
+  <script src="https://cdn.typebot.io/latest/vanilla.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #typebot-container {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="typebot-container"></div>
+  <script>
+    fetch('flow.json')
+      .then(response => response.json())
+      .then(flow => {
+        window.Typebot.initFlow("typebot-container", flow);
+      });
+  </script>
+</body>
+</html>
